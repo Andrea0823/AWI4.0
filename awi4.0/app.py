@@ -53,11 +53,31 @@ class Index:
 
     def POST(self):
         form = web.input()
-        a = form["num1"]
+        a = form ["num1"]
         b = form["num2"]
-        sumita= int(a) + int(b)
 
-        opcion = form["sumita"]
+        if(len(a)!=0 and len(b)!=0):
+            if(a.isnumeric() and b.isnumeric()):
+                opcion = form["sumita"]
+                if(opcion=="sumar"):
+                    sumita= int(a) + int(b)
+                    opcion= sumita
+
+                elif(opcion=="Restar"):
+                    resta= int(a) - int(b)
+                    opcion= resta
+
+                elif(opcion=="Multiplicar"):
+                    multiplicacion= int(a) * int(b)
+                    opcion= multiplicacion
+
+                elif(opcion=="Dividir"):
+                    dividir= int(a) / int(b)
+                    opcion= dividir
+            else:
+                opcion = "Inserta un numero"
+        else:
+            opcion ="No permite valores vacios"
         return opcion
 
 if __name__ == "__main__":
