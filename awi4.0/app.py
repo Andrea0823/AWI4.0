@@ -104,3 +104,26 @@ class Tablas:
 if __name__ == "__main__":
     # web.config.debug=False
     app.run()
+
+#COOKIES
+import web
+
+urls = (
+    '/', 'Tablas',
+
+)
+app = web.application(urls, globals())
+render = web.template.render('templates')
+setcookie(name, value, expires="", domain=None, secure=False, samesite=None):
+
+class Visitas:
+    def GET(self, name):
+        try:
+            cookie = web.cookies()
+            if cookies.get("visitas")
+            print(cookie)
+        
+
+if __name__ == "__main__":
+    # web.config.debug=False
+    app.run()
