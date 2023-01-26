@@ -1,5 +1,4 @@
-$def with(data)
-$data
+$def with(datos)
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,14 +8,21 @@ $data
     <title>Tablas</title>
 </head>
 <body>
+    $datos
+    <h1>Mis datos</h1>
     <table>
         <thead>
             <th>No.</th>
             <th>Nombre</th>
         </thead>
         <tbody>
-            <tr>1</tr>
-            <tr>Dejah</tr>
+            $for i in datos:
+            <tr style="padding-left: 20px;">
+                <td>
+                    $i[0]
+                </td>
+                <td>$i[1]</td>
+            </tr>
         </tbody>
     </table>
 </body>
